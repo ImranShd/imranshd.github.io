@@ -39,7 +39,7 @@
 
 	<script>
 		function goToByScroll(id){
-				event.preventDefault();
+				// event.preventDefault();
 
 				    $('html, body').animate({
 				        scrollTop: $(id).offset().top - ( $(window).height() - $(id).outerHeight(true) ) / 2
@@ -178,7 +178,7 @@
 							data-elementdelay="0.01"
 							data-endelementdelay="0.1"
 							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3;"><a onClick="goToByScroll(mycanvas)" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
+							data-endeasing="Power4.easeIn" style="z-index: 3;"><a onClick="event.preventDefault(); goToByScroll(mycanvas)" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
 
 						</div>
 						<!-- LAYER NR. 2 -->
@@ -587,7 +587,7 @@
 	============================================= -->
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script>
-			$(function() {  
+			$(function() {
 				document.body.scrollTop = 0;
 				/* do work */
 			})
