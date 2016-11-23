@@ -37,6 +37,16 @@
 	============================================= -->
 	<title>Tipping Points</title>
 
+	<script>
+		function goToByScroll(id){
+				event.preventDefault();
+
+				    $('html, body').animate({
+				        scrollTop: $(id).offset().top - ( $(window).height() - $(id).outerHeight(true) ) / 2
+				    }, 500);
+		    // $(window).scrollTop($(id).offset().top, 'slow');
+		}
+	</script>
 	<style>
 
 		.revo-slider-emphasis-text {
@@ -168,7 +178,7 @@
 							data-elementdelay="0.01"
 							data-endelementdelay="0.1"
 							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="#mycanvas" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
+							data-endeasing="Power4.easeIn" style="z-index: 3;"><a onClick="goToByScroll(mycanvas)" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
 
 						</div>
 						<!-- LAYER NR. 2 -->
@@ -285,15 +295,15 @@
 						<img class="bottommargin" src="images/lem/logo.png" alt="">
 						<h1>Welcome! This is <span>Tipping Points</span>.</h1>
 						<h2>A very smooth, lag free &amp; high quality streaming service provider that makes it easy to create your own streaming platform of any category.</h2>
-						<a href="#myFeature" class="button button-3d button-dark button-large ">Browse Features</a>
-						<a href="#pricing" class="button button-3d button-large tright nomargin">Get Qoute</a>
+						<a onClick="goToByScroll(myFeature)" class="button button-3d button-dark button-large ">Browse Features</a>
+						<a onClick="goToByScroll(pricing)" class="button button-3d button-large tright nomargin">Get Qoute</a>
 					</div>
 
 					<div class="line"></div>
 
-					<div id="myFeature" class="col_one_third">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
-							<div class="fbox-icon">
+					<div  class="col_one_third">
+						<div  class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
+							<div  class="fbox-icon">
 								<a ><i class="icon-phone2"></i></a>
 							</div>
 							<h3>Responsive Layout</h3>
@@ -333,7 +343,7 @@
 						</div>
 					</div>
 
-					<div class="col_one_third">
+					<div id="myFeature"  class="col_one_third">
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
 							<div class="fbox-icon">
 								<a><i class="icon-params"></i></a>
@@ -365,7 +375,7 @@
 						</div>
 					</div>
 
-					<div class="col_one_third nobottommargin">
+					<div  class="col_one_third nobottommargin">
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1400">
 							<div class="fbox-icon">
 								<a ><i class="icon-heart2"></i></a>
@@ -449,7 +459,7 @@
 						<div>
 							<h3 class="uppercase" style="font-weight: 600;">Why choose Us</h3>
 							<p style="line-height: 1.8;">Smooth, high quality, lag-free and one of the best live streaming service provider company. One of the first live streaming pakistani platform.</p>
-							<a href="#myFeature" class="button button-border button-light button-rounded uppercase nomargin">Features</a>
+							<a onClick="goToByScroll(myFeature)" class="button button-border button-light button-rounded uppercase nomargin">Features</a>
 							<i class="icon-thumbs-up bgicon"></i>
 						</div>
 					</div>
@@ -457,7 +467,7 @@
 					<div class="col-md-4 dark col-padding ohidden" style="background-color: #34495e;">
 						<div>
 							<h3 class="uppercase" style="font-weight: 600;">Get Hired</h3>
-							<p style="line-height: 1.8;">Are you capable of working with fast paced team? got skills that we are looking for? finding an opportunity that brings best out of you? Send us your resume. \n</p>
+							<p style="line-height: 1.8;">Are you capable of working with fast paced team? got skills that we are looking for? finding an opportunity that brings best out of you? Send us your resume.</p>
 							<a href="mailto:hr@thankyo.net" class="button button-border button-light button-rounded uppercase nomargin">Get Hired</a>
 							<i class="icon-bulb bgicon"></i>
 						</div>
@@ -573,10 +583,14 @@
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
-
 	<!-- Footer Scripts
 	============================================= -->
 		<script type="text/javascript" src="js/functions.js"></script>
-
+		<script>
+			$(function() {  
+				document.body.scrollTop = 0;
+				/* do work */
+			})
+		</script>
 </body>
 </html>
